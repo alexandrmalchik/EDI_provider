@@ -32,6 +32,7 @@ class IndexController extends Controller
         foreach ($request->all() as $key => $item) {
             if ($key != '_token' && $key != 'name') {
                 $data['DeliveryNote'][$key] = $item;
+//                if($key == 'Document_')
             }
         }
 
@@ -64,13 +65,31 @@ class IndexController extends Controller
         $myTextElement = $section->addText($file->name);
         $myTextElement->setFontStyle($fontStyle);
 
-        foreach ($file->data['DeliveryNote'] as $key => $value) {
-            $section->addText($key . ': '. $value, array('name' => 'Times New Roman', 'size' => 12, 'bold' => true));
-        }
+//        foreach ($file->data['DeliveryNote'] as $key => $value) {
+//            $section->addText($key . ': '. $value, array('name' => 'Times New Roman', 'size' => 12, 'bold' => true));
+//        }
+
+        $this->parseArray($file->data['DeliveryNote'], $section);
 
         $writer = IOFactory::createWriter($word, 'Word2007');
         $writer->save('../storage/app/file'.$file->id.'.docx');
 
         return Storage::download('file'.$file->id.'.docx');
+    }
+
+    private function addString($key, $value, $section) {
+        $section->addText($key . ': '. $value, array('name' => 'Times New Roman', 'size' => 12, 'bold' => true));
+    }
+
+    private function parseArray($array, $section) {
+        foreach ($array as $key => $item) {
+            if (is_array($item)) {
+                $this->addString($key, '-begin-',$section);
+                $this->parseArray($item, $section);
+                $this->addString($key, '-end-',$section);
+            } else {
+                $this->addString($key, $item, $section);
+            }
+        }
     }
 }
