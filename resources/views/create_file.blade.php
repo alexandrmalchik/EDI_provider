@@ -18,6 +18,7 @@
                 </div>
             </div>
 
+            <h2>Раздел «Данные накладной» (этот раздел подписывается ЭЦП)</h2>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Вид сообщения</label>
@@ -82,7 +83,7 @@
             </div>
 
             <div class="col-md-12">
-                <h2>Document</h2>
+                <h2>Подраздел «Информация о переданном с товаром документе»</h2>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">Номер документа</label>
@@ -106,7 +107,7 @@
             </div>
 
             <div class="col-md-12">
-                <h2>Shipper</h2>
+                <h2>Подраздел «Информация о грузоотправителе»</h2>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">GLN-номер грузоотправителя</label>
@@ -144,7 +145,7 @@
             </div>
 
             <div class="col-md-12">
-                <h2>Receiver</h2>
+                <h2>Подраздел «Информация о грузополучателе»</h2>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">GLN-номер грузополучателя</label>
@@ -175,7 +176,7 @@
             </div>
 
             <div class="col-md-12">
-                <h2>ShipFrom</h2>
+                <h2>Подраздел «Информация о пункте погрузки»</h2>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">GLN-номер пункта погрузки</label>
@@ -199,7 +200,7 @@
             </div>
 
             <div class="col-md-12">
-                <h2>ShipTo</h2>
+                <h2>Подраздел «Информация о пункте разгрузки»</h2>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">GLN-номер пункта разгрузки</label>
@@ -216,12 +217,10 @@
             </div>
 
             <div class="col-md-12">
-                <h2>FreightPayer</h2>
+                <h2>Подраздел «Информация о заказчике автомобильной перевозки»</h2>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="name">GLN-номер заказчика автомобильной
-                            перевозки (плательщика)
-                        </label>
+                        <label for="name">GLN-номер заказчика автомобильной перевозки (плательщика)</label>
                         <input type="text" class="form-control" id="last_name" placeholder="Enter name" name="FreightPayer[GLN]" required="required">
                     </div>
                 </div>
@@ -249,7 +248,7 @@
             </div>
 
             <div class="col-md-12">
-                <h2>Carrier</h2>
+                <h2>Подраздел «Информация о транспортировке»</h2>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">Водитель</label>
@@ -284,8 +283,11 @@
                         <input type="text" class="form-control" id="last_name" placeholder="Enter name" name="Carrier[PartylssuingProxyName]" required="required">
                     </div>
                 </div>
+                <hr style="border: 1px dashed #c2c2a3;">
             </div>
 
+
+            <h2>Продолжение раздела «Данные накладной»</h2>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Количество ездок</label>
@@ -327,6 +329,66 @@
                     <input type="text" class="form-control" id="last_name" placeholder="Enter name" name="Currency" required="required">
                 </div>
             </div>
+
+            <div class="col-md-12">
+                <h2>Итоговая информация</h2>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Общая сумма без НДС</label>
+                        <input type="text" class="form-control" id="last_name" placeholder="Enter name" name="Total[ТotalAmountWithoutCharges]" required="required">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Общая сумма НДС</label>
+                        <input type="text" class="form-control" id="last_name" placeholder="Enter name" name="Total[ТotalAmountCharges]" required="required">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Общая сумма с НДС</label>
+                        <input type="text" class="form-control" id="last_name" placeholder="Enter name" name="Total[ТotaIAmount]" required="required">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Всего количество товарных позиций</label>
+                        <input type="text" class="form-control" id="last_name" placeholder="Enter name" name="Total[TotalLineltem]" required="required">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Всего количество единиц</label>
+                        <input type="text" class="form-control" id="last_name" placeholder="Enter name" name="Total[ТotalTradeltemQuantity]" required="required">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Всего масса груза в метрических тоннах</label>
+                        <input type="text" class="form-control" id="last_name" placeholder="Enter name" name="Total[ТotalGrossWeight]" required="required">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Всего грузовых мест</label>
+                        <input type="text" class="form-control" id="last_name" placeholder="Enter name" name="Total[ТotalDespatchUnitQuantity]" required="required">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Всего сумма акциза</label>
+                        <input type="text" class="form-control" id="last_name" placeholder="Enter name" name="Total[TotalAmountExcise]" required="required">
+                    </div>
+                </div>
+            </div>
+
 
             <div class="col-md-12 form-group form-actions">
                 <button type="submit" class="btn btn-success btn-label right10"><span><i class="fa fa-save"></i></span>
