@@ -19,8 +19,8 @@
                              <td>{{ $file->id }}</td>
                              <td>{{ $file->name }}</td>
                              <td class="text-center">
-                                 <a href="{{ url('/'.$file->id) }}"
-                                    class="btn btn-secondary">show</a>
+{{--                                 <a href="{{ url('/'.$file->id) }}"--}}
+{{--                                    class="btn btn-secondary">show</a>--}}
                                  <a href="{{ url('/'.$file->id.'/download-xml') }}"
                                     class="btn btn-secondary">xml</a>
                                  <a href="{{ url('/files/'.$file->id.'/download-docx') }}"
